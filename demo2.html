@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For Zainab 💛</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0f0e17;
+      --card: #1a1825;
+      --accent: #e8b4b8;
+      --gold: #f0c987;
+      --text: #f5f0eb;
+      --muted: #a89f9a;
+      --pink: #d4a5a5;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+
+    /* Soft floating particles */
+    .particles {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .particle {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      background: var(--gold);
+      border-radius: 50%;
+      opacity: 0.25;
+      animation: float 18s infinite ease-in-out;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0) translateX(0); opacity: 0.2; }
+      50% { transform: translateY(-80px) translateX(30px); opacity: 0.5; }
+    }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 2rem 1.5rem;
+      z-index: 1;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 30%, rgba(232, 180, 184, 0.12) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      font-size: 0.85rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      animation: fadeUp 1s 0.3s forwards;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 9vw, 4.8rem);
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, #f5f0eb 0%, var(--gold) 50%, var(--accent) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      opacity: 0;
+      animation: fadeUp 1s 0.5s forwards;
+    }
+
+    .subtitle {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: clamp(1.15rem, 3.5vw, 1.6rem);
+      color: var(--accent);
+      margin-bottom: 2.5rem;
+      opacity: 0;
+      animation: fadeUp 1s 0.7s forwards;
+    }
+
+    .scroll-hint {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.8rem;
+      color: var(--muted);
+      letter-spacing: 0.1em;
+      opacity: 0;
+      animation: fadeUp 1s 1.2s forwards, pulse 2.5s 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 0.5; }
+      50% { opacity: 1; }
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Sections */
+    section {
+      position: relative;
+      z-index: 1;
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 5rem 1.5rem;
+    }
+
+    .section-label {
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .section-label::before {
+      content: '';
+      width: 28px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.9rem, 5vw, 2.6rem);
+      font-weight: 600;
+      margin-bottom: 1.75rem;
+      color: var(--text);
+    }
+
+    p {
+      font-size: 1.05rem;
+      color: var(--muted);
+      margin-bottom: 1.25rem;
+      font-weight: 300;
+    }
+
+    p strong {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .highlight {
+      color: var(--gold);
+      font-weight: 500;
+    }
+
+    /* Cards */
+    .card {
+      background: var(--card);
+      border: 1px solid rgba(240, 201, 135, 0.12);
+      border-radius: 20px;
+      padding: 2rem 1.75rem;
+      margin-top: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+
+    .card p {
+      margin-bottom: 0.9rem;
+    }
+
+    .card p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Congrats special */
+    .congrats-box {
+      background: linear-gradient(145deg, rgba(232, 180, 184, 0.08), rgba(240, 201, 135, 0.06));
+      border: 1px solid rgba(240, 201, 135, 0.2);
+      border-radius: 24px;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      margin: 2.5rem 0;
+    }
+
+    .congrats-box .emoji {
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .congrats-box h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.7rem;
+      color: var(--gold);
+      margin-bottom: 0.75rem;
+    }
+
+    /* Welcome section */
+    .welcome {
+      text-align: center;
+      padding-bottom: 6rem;
+    }
+
+    .welcome h2 {
+      background: linear-gradient(135deg, var(--accent), var(--gold));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .signature {
+      margin-top: 3.5rem;
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.35rem;
+      color: var(--accent);
+    }
+
+    .signature span {
+      display: block;
+      font-size: 0.85rem;
+      font-style: normal;
+      font-family: 'Inter', sans-serif;
+      color: var(--muted);
+      margin-top: 0.4rem;
+      letter-spacing: 0.05em;
+    }
+
+    /* Hearts animation */
+    .hearts {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .heart {
+      position: absolute;
+      bottom: -20px;
+      font-size: 1.2rem;
+      opacity: 0.15;
+      animation: rise 12s linear infinite;
+    }
+
+    @keyframes rise {
+      0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+      10% { opacity: 0.2; }
+      90% { opacity: 0.15; }
+      100% { transform: translateY(-110vh) rotate(360deg); opacity: 0; }
+    }
+
+    /* Footer note */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+      opacity: 0.6;
+    }
+
+    /* Responsive tweaks */
+    @media (max-width: 480px) {
+      section {
+        padding: 3.5rem 1.25rem;
+      }
+      .card {
+        padding: 1.6rem 1.3rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="particles" id="particles"></div>
+  <div class="hearts" id="hearts"></div>
+
+  <!-- HERO -->
+  <header class="hero">
+    <p class="eyebrow">A little something for you</p>
+    <h1>Zainab</h1>
+    <p class="subtitle">You finished. I’m so proud of you.</p>
+    <div class="scroll-hint">↓ scroll</div>
+  </header>
+
+  <!-- APOLOGY -->
+  <section>
+    <div class="section-label">First things first</div>
+    <h2>I’m really sorry</h2>
+    <div class="card">
+      <p>
+        Today you were finishing school and I couldn’t be there to pick you up.
+        That shouldn’t have happened. You deserved to walk out of those gates
+        and see me waiting.
+      </p>
+      <p>
+        I know how much this day meant to you, and I’m sorry I wasn’t able to
+        share that moment with you in person. Please forgive me.
+      </p>
+      <p>
+        This little website is my way of saying: <strong>I see you, I’m proud of you,
+        and I’m still here</strong> — even if I couldn’t be there at that exact second.
+      </p>
+    </div>
+  </section>
+
+  <!-- CONGRATS -->
+  <section>
+    <div class="section-label">The real reason</div>
+    <h2>You did it.</h2>
+    <p>
+      Four years of early mornings, late nights, pressure, and perseverance —
+      and you finished. <span class="highlight">KCSE is done.</span>
+    </p>
+    <p>
+      You carried the weight of expectations, the uncertainty, the long days of
+      revision… and you still showed up. That takes real strength.
+    </p>
+
+    <div class="congrats-box">
+      <span class="emoji">🎓✨</span>
+      <h3>Congratulations, Zainab</h3>
+      <p style="color: var(--muted); margin: 0;">
+        You closed this chapter with grace.<br>
+        The next one is already waiting for you.
+      </p>
+    </div>
+  </section>
+
+  <!-- WELCOME -->
+  <section class="welcome">
+    <div class="section-label" style="justify-content: center;">
+      A new beginning
+    </div>
+    <h2>Welcome to the next chapter</h2>
+    <p style="max-width: 520px; margin: 0 auto 1.5rem;">
+      Finishing high school isn’t just the end of something.
+      It’s the beginning of your life as a young adult — free to choose,
+      to dream bigger, to step into the world on your own terms.
+    </p>
+    <p style="max-width: 520px; margin: 0 auto 1.5rem;">
+      So this is me officially welcoming you:
+    </p>
+    <p style="font-size: 1.25rem; color: var(--gold); margin: 2rem 0;">
+      Welcome to citizenship of your own life.<br>
+      Welcome to the version of you that gets to decide what comes next.
+    </p>
+    <p style="max-width: 480px; margin: 0 auto;">
+      I’m excited to watch you write this new story.
+      And I’m even more excited to be part of it — whenever you’ll have me.
+    </p>
+
+    <div class="signature">
+      With all my love,<br>
+      Your boyfriend
+      <span>Always rooting for you 💛</span>
+    </div>
+  </section>
+
+  <footer>
+    Made with care, just for Zainab · 2026
+  </footer>
+
+  <script>
+    // Floating particles
+    const particlesContainer = document.getElementById('particles');
+    for (let i = 0; i < 18; i++) {
+      const p = document.createElement('div');
+      p.className = 'particle';
+      p.style.left = Math.random() * 100 + '%';
+      p.style.top = Math.random() * 100 + '%';
+      p.style.animationDelay = Math.random() * 12 + 's';
+      p.style.animationDuration = 14 + Math.random() * 10 + 's';
+      p.style.width = p.style.height = (3 + Math.random() * 5) + 'px';
+      particlesContainer.appendChild(p);
+    }
+
+    // Rising hearts
+    const heartsContainer = document.getElementById('hearts');
+    const heartSymbols = ['💛', '🤍', '✨', '💫'];
+    for (let i = 0; i < 12; i++) {
+      const h = document.createElement('div');
+      h.className = 'heart';
+      h.textContent = heartSymbols[Math.floor(Math.random() * heartSymbols.length)];
+      h.style.left = Math.random() * 100 + '%';
+      h.style.animationDelay = Math.random() * 10 + 's';
+      h.style.animationDuration = 10 + Math.random() * 8 + 's';
+      h.style.fontSize = (0.9 + Math.random() * 0.8) + 'rem';
+      heartsContainer.appendChild(h);
+    }
+  </script>
+</body>
+</html>

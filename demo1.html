@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>For Zainab</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,800&family=Figtree:wght@400;600&display=swap">
+<style>
+:root{--bg:#fbfaf8;--ink:#1b1b1b;--muted:#5b5b57;--green:#0a5c3a;--red:#b3261e;--card:#ffffff;--line:#e4e1da;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#101412;--ink:#f1f0ec;--muted:#a8aaa3;--green:#4fb585;--red:#ef6a60;--card:#182019;--line:#2a342d;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#101412;--ink:#f1f0ec;--muted:#a8aaa3;--green:#4fb585;--red:#ef6a60;--card:#182019;--line:#2a342d;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.05rem/1.65 Figtree,system-ui,sans-serif}
+.flag{height:10px;background:linear-gradient(#111 0 30%,#fff 30% 36%,var(--red) 36% 64%,#fff 64% 70%,var(--green) 70%)}
+main{max-width:34rem;margin:0 auto;padding:2.5rem 1.25rem 4rem}
+h1,h2{font-family:Fraunces,Georgia,serif;line-height:1.1;margin:0}
+h1{font-size:clamp(2.6rem,13vw,4.2rem);font-weight:800;letter-spacing:-.02em}
+h2{font-size:1.8rem;font-weight:800;margin-bottom:.75rem}
+.lead{color:var(--muted);font-size:1.15rem;margin:1rem 0 2rem}
+section{margin-top:3.25rem}
+button{font:600 1rem Figtree,system-ui,sans-serif;cursor:pointer;border-radius:999px;border:2px solid var(--green);background:var(--green);color:#fff;padding:.85rem 1.5rem;min-height:48px}
+button:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+.ghost{background:transparent;color:var(--green)}
+.letter{display:none;background:var(--card);border:1px solid var(--line);border-left:6px solid var(--red);border-radius:6px;padding:1.5rem}
+.letter.open{display:block}
+.letter p{margin:0 0 1rem}
+.sign{font-family:Fraunces,Georgia,serif;font-weight:800;font-size:1.3rem;margin:0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.card .band{height:12px;background:linear-gradient(90deg,#111 0 25%,var(--red) 25% 50%,var(--green) 50% 75%,#fff 75%)}
+.card .body{padding:1.5rem}
+.card h3{font-family:Fraunces,Georgia,serif;margin:0 0 .25rem;font-size:1.5rem}
+.card ul{margin:1rem 0 0;padding-left:1.2rem}
+.card li{margin-bottom:.4rem}
+.chips{display:flex;flex-wrap:wrap;gap:.6rem;margin:1rem 0}
+.chips button{background:transparent;color:var(--ink);border-color:var(--line)}
+.chips button[aria-pressed="true"]{background:var(--green);color:#fff;border-color:var(--green)}
+#pick{min-height:3rem;font-weight:600;color:var(--green)}
+.wa{display:inline-block;background:var(--green);color:#fff;text-decoration:none;font-weight:600;border-radius:999px;padding:.85rem 1.5rem;min-height:48px;margin-top:.5rem}
+.wa[hidden]{display:none}
+.wa:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+canvas{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:5}
+footer{margin-top:3rem;color:var(--muted);font-size:.95rem}
+@media (prefers-reduced-motion:reduce){canvas{display:none}}
+</style>
+</head>
+<body>
+<div class="flag" aria-hidden="true"></div>
+<canvas id="c" aria-hidden="true"></canvas>
+<main>
+  <h1>Zainab, you did it.</h1>
+  <p class="lead">KCSE is behind you. Four years of early mornings, exams and late nights, finished. I built this page for you today.</p>
+  <button id="open" aria-expanded="false" aria-controls="letter">Open my letter</button>
+
+  <section>
+    <div class="letter" id="letter" role="region" aria-label="A letter for Zainab">
+      <h2>I’m sorry.</h2>
+      <p>I wasn’t at the gate today, and I should have been. The day you walked out of school for the last time was a day I wanted to be there for, and I let you down.</p>
+      <p>There is no excuse that is good enough, so I won’t give you one. I’m sorry, and I’m going to make it up to you.</p>
+      <p>I’m proud of you for the work you put in, for the stress you carried and for finishing. Today was yours, and I should have been standing there with you.</p>
+      <p class="sign">Joepavin</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="card">
+      <div class="band"></div>
+      <div class="body">
+        <h3>Welcome, citizen.</h3>
+        <p style="margin:0;color:var(--muted)">School is over and a bigger chapter starts. You are a full citizen of Kenya now, with a voice, a vote and a future that you decide.</p>
+        <ul>
+          <li>Your ideas count, and people should hear them.</li>
+          <li>Your choices are yours, from here on.</li>
+          <li>You already proved you can finish hard things.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>I owe you a celebration.</h2>
+    <p style="margin:0;color:var(--muted)">You pick it. I’ll show up this time.</p>
+    <div class="chips" id="chips">
+      <button type="button" aria-pressed="false">Ice cream</button>
+      <button type="button" aria-pressed="false">Dinner out</button>
+      <button type="button" aria-pressed="false">A movie</button>
+      <button type="button" aria-pressed="false">A long walk</button>
+    </div>
+    <div id="pick" aria-live="polite"></div>
+    <a id="wa" class="wa" href="#" target="_blank" rel="noopener" hidden>Send my pick to Joepavin</a>
+  </section>
+
+  <footer>Congratulations, Zainab. Made with love, and a little guilt, by Joepavin.</footer>
+</main>
+<script>
+(function(){
+  var openBtn=document.getElementById('open'),letter=document.getElementById('letter');
+  var cv=document.getElementById('c'),ctx=cv.getContext('2d'),bits=[],run=false;
+  function size(){cv.width=innerWidth;cv.height=innerHeight}
+  size();addEventListener('resize',size);
+  function burst(){
+    var cols=['#b3261e','#0a5c3a','#111111','#e8e5dd'];
+    for(var i=0;i<110;i++){bits.push({x:innerWidth/2,y:innerHeight*0.45,vx:(Math.random()-.5)*12,vy:Math.random()*-12-2,s:4+Math.random()*5,c:cols[i%4],l:90+Math.random()*50})}
+    if(!run){run=true;tick()}
+  }
+  function tick(){
+    ctx.clearRect(0,0,cv.width,cv.height);
+    bits=bits.filter(function(b){return b.l-->0});
+    bits.forEach(function(b){b.x+=b.vx;b.y+=b.vy;b.vy+=.35;ctx.fillStyle=b.c;ctx.fillRect(b.x,b.y,b.s,b.s)});
+    if(bits.length){requestAnimationFrame(tick)}else{run=false}
+  }
+  openBtn.addEventListener('click',function(){
+    var o=letter.classList.toggle('open');
+    openBtn.setAttribute('aria-expanded',o);
+    openBtn.textContent=o?'Close my letter':'Open my letter';
+    if(o){
+      letter.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth',block:'start'});
+      if(!matchMedia('(prefers-reduced-motion:reduce)').matches){burst()}
+    }
+  });
+  var chips=document.querySelectorAll('#chips button'),pick=document.getElementById('pick');
+  chips.forEach(function(b){b.addEventListener('click',function(){
+    chips.forEach(function(x){x.setAttribute('aria-pressed','false')});
+    b.setAttribute('aria-pressed','true');
+    pick.textContent='Deal. '+b.textContent+' it is. Now tap below so I know.';
+    var wa=document.getElementById('wa');
+    wa.href='https://wa.me/254113268991?text='+encodeURIComponent('Hi Joepavin, I chose: '+b.textContent+' 🎉');
+    wa.hidden=false;
+  })});
+})();
+</script>
+</body>
+</html>
